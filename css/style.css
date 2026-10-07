@@ -1,0 +1,114 @@
+/* Universal reset: clear default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Clearfix solution: double pseudo‑element for float clear, method 1 */
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+
+/* Main page container DevBox required class */
+.DevBox {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Wrap container: fixed width, horizontal center use margin:0 auto */
+.wrap {
+    width: 1200px;
+    margin: 0 auto; /* requirement: horizontal centering */
+}
+
+/* Top navigation bar: full width background */
+.top-nav {
+    background-color: #232f3e;
+    color: white;
+}
+/* Logo float left in top navigation */
+.top-nav .logo {
+    float: left;
+    font-size: 22px;
+    line-height: 50px; /* control height by line‑height */
+}
+/* Right navigation links float right */
+.top-nav .nav-right {
+    float: right;
+    line-height: 50px;
+}
+.top-nav .nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left:20px;
+}
+.top-nav .nav-right a:hover {
+    color: #ff9900;
+}
+/* Use overflow:hidden to clear float collapse, method2 (second clear method required) */
+.top-nav .wrap {
+    overflow: hidden;
+}
+
+/* Search area block background */
+.search-area {
+    background-color:#ff9900;
+    padding:10px 0;
+}
+.search-input {
+    width: 900px; /* search box width */
+    height:30px;
+    float:left;
+}
+.search-btn {
+    float:left;
+    height:34px;
+    width:80px;
+    background:#232f3e;
+    color:white;
+    border:none;
+}
+.search-area .wrap {
+    overflow:hidden;
+}
+
+/* Banner block full width */
+.banner img {
+    width:100%;
+    height:300px;
+}
+
+/* Product section: use clearfix class to clear float collapse on parent */
+.product-section {
+    margin-top:20px;
+}
+.product-section .wrap {
+    /* apply clearfix pseudo‑element clear float */
+    clear: both;
+}
+/* Product card float left for horizontal layout */
+.product-card {
+    width:280px;
+    height:350px;
+    border:1px solid #ccc;
+    padding:10px;
+    margin-right:26px;
+    float:left;
+}
+.product-card img {
+    width:100%;
+    height:250px;
+}
+
+/* Footer block vertical layout normal flow */
+.footer {
+    margin-top:30px;
+    background:#232f3e;
+    color:white;
+    text-align:center;
+    padding:20px 0;
+}
